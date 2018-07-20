@@ -1,0 +1,6 @@
+Jul 20, 2018 12:45:09 AM: Account 962739 opened.
+Jul 20, 2018 12:45:20 AM: Charge of $55.24 for gas posted
+Jul 20, 2018 12:45:38 AM: Charge declined: amount must be positive.
+Jul 20, 2018 12:45:54 AM: Charge declined: amount must be positive.
+Jul 20, 2018 12:46:04 AM: Charge declined: over credit limit
+Jul 20, 2018 1:02:18 AM: Charge of $19.90 for lunch posted

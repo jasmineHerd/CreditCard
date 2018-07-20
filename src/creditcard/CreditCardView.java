@@ -109,9 +109,14 @@ public class CreditCardView extends FrameView {
         jButton1 = new javax.swing.JButton();
         jbtnExisting = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jtxtChg = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jtxtChgDesc = new javax.swing.JTextField();
+        jbtnChg = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jtxtCrtLmt = new javax.swing.JTextField();
+        jtxtCrLimit = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jtxtBalDue = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -146,19 +151,67 @@ public class CreditCardView extends FrameView {
 
         jbtnExisting.setText(resourceMap.getString("jbtnExisting.text")); // NOI18N
         jbtnExisting.setName("jbtnExisting"); // NOI18N
+        jbtnExisting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnExistingActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel1.setName("jPanel1"); // NOI18N
+
+        jLabel5.setText(resourceMap.getString("jLabel5.text")); // NOI18N
+        jLabel5.setName("jLabel5"); // NOI18N
+
+        jtxtChg.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jtxtChg.setText(resourceMap.getString("jtxtChg.text")); // NOI18N
+        jtxtChg.setName("jtxtChg"); // NOI18N
+
+        jLabel6.setText(resourceMap.getString("jLabel6.text")); // NOI18N
+        jLabel6.setName("jLabel6"); // NOI18N
+
+        jtxtChgDesc.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jtxtChgDesc.setText(resourceMap.getString("jtxtChgDesc.text")); // NOI18N
+        jtxtChgDesc.setName("jtxtChgDesc"); // NOI18N
+
+        jbtnChg.setText(resourceMap.getString("jbtnChg.text")); // NOI18N
+        jbtnChg.setName("jbtnChg"); // NOI18N
+        jbtnChg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnChgActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 504, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtxtChg, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jtxtChgDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbtnChg)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5)
+                        .addComponent(jtxtChg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jtxtChgDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbtnChg)))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -167,11 +220,11 @@ public class CreditCardView extends FrameView {
         jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
         jLabel2.setName("jLabel2"); // NOI18N
 
-        jtxtCrtLmt.setEditable(false);
-        jtxtCrtLmt.setBackground(resourceMap.getColor("jtxtCrtLmt.background")); // NOI18N
-        jtxtCrtLmt.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jtxtCrtLmt.setText(resourceMap.getString("jtxtCrtLmt.text")); // NOI18N
-        jtxtCrtLmt.setName("jtxtCrtLmt"); // NOI18N
+        jtxtCrLimit.setEditable(false);
+        jtxtCrLimit.setBackground(resourceMap.getColor("jtxtCrLimit.background")); // NOI18N
+        jtxtCrLimit.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jtxtCrLimit.setText(resourceMap.getString("jtxtCrLimit.text")); // NOI18N
+        jtxtCrLimit.setName("jtxtCrLimit"); // NOI18N
 
         jLabel3.setText(resourceMap.getString("jLabel3.text")); // NOI18N
         jLabel3.setName("jLabel3"); // NOI18N
@@ -201,12 +254,13 @@ public class CreditCardView extends FrameView {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(50, 50, 50)
-                        .addComponent(jtxtCrtLmt, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jtxtCrLimit, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel3)
-                            .addGap(50, 50, 50)
-                            .addComponent(jtxtBalDue))
+                            .addGap(48, 48, 48)
+                            .addComponent(jtxtBalDue)
+                            .addGap(2, 2, 2))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel4)
                             .addGap(18, 18, 18)
@@ -219,16 +273,16 @@ public class CreditCardView extends FrameView {
                 .addGap(22, 22, 22)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jtxtCrtLmt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jtxtBalDue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtCrLimit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jtxtBalDue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jtxtCrAvail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
@@ -249,9 +303,9 @@ public class CreditCardView extends FrameView {
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(111, Short.MAX_VALUE))
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,7 +320,7 @@ public class CreditCardView extends FrameView {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         menuBar.setName("menuBar"); // NOI18N
@@ -334,29 +388,86 @@ public class CreditCardView extends FrameView {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        statusMessageLabel.setText("");
-       NumberFormat curr = NumberFormat.getCurrencyInstance();
        cc = new Card();
+       
        if(cc.getErrorMsg().isEmpty()){
-        jtxtAcctNo.setText(cc.getAcctNo());
+        jtxtAcctNo.setText(String.valueOf(cc.getAcctNo()));
+        DisplayValues();
+        statusMessageLabel.setText(cc.getActionMsg());
     }else{
            statusMessageLabel.setText(cc.getErrorMsg());
        }
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jbtnChgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnChgActionPerformed
+        statusMessageLabel.setText("");
+        double amt;
+        try{
+            amt = Double.parseDouble(jtxtChg.getText());
+        }catch(NumberFormatException e){
+            statusMessageLabel.setText("Amount is not numeric");
+            jtxtChg.requestFocusInWindow();
+            return;
+        }
+        cc.setCharge(amt,jtxtChgDesc.getText());
+        if(!cc.getErrorMsg().isEmpty()){
+            statusMessageLabel.setText(cc.getErrorMsg());
+            
+        }else{
+            statusMessageLabel.setText(cc.getActionMsg());
+            DisplayValues();
+        }
+        jtxtChg.setText("");
+        jtxtChgDesc.setText("");
+        jtxtChg.requestFocusInWindow();
+    }//GEN-LAST:event_jbtnChgActionPerformed
+
+    private void jbtnExistingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExistingActionPerformed
+        statusMessageLabel.setText("");
+        long a;
+        try{
+            a = Long.parseLong(jtxtAcctNo.getText());
+            cc = new Card(a);
+            if(!cc.getErrorMsg().isEmpty()){
+                statusMessageLabel.setText(cc.getErrorMsg());
+            }else{
+                statusMessageLabel.setText(cc.getActionMsg());
+                DisplayValues();
+            
+            }
+        }catch(NumberFormatException e){
+                statusMessageLabel.setText("Account number not legal.");
+        }                     
+        
+    }//GEN-LAST:event_jbtnExistingActionPerformed
+   
+    private void DisplayValues(){
+        NumberFormat curr = NumberFormat.getCurrencyInstance();
+        jtxtCrLimit.setText(curr.format(cc.getCreditLimit()));
+        jtxtCrAvail.setText(curr.format(cc.getCrAvail()));
+        jtxtBalDue.setText(curr.format(cc.getBalDue()));
+        
+
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton jbtnChg;
     private javax.swing.JButton jbtnExisting;
     private javax.swing.JTextField jtxtAcctNo;
     private javax.swing.JTextField jtxtBalDue;
+    private javax.swing.JTextField jtxtChg;
+    private javax.swing.JTextField jtxtChgDesc;
     private javax.swing.JTextField jtxtCrAvail;
-    private javax.swing.JTextField jtxtCrtLmt;
+    private javax.swing.JTextField jtxtCrLimit;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JProgressBar progressBar;
