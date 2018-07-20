@@ -4,6 +4,7 @@
 
 package creditcard;
 
+import business.Card;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
 import org.jdesktop.application.SingleFrameApplication;
@@ -21,6 +22,7 @@ import javax.swing.JFrame;
  * The application's main frame.
  */
 public class CreditCardView extends FrameView {
+    Card cc;
 
     public CreditCardView(SingleFrameApplication app) {
         super(app);
@@ -333,6 +335,13 @@ public class CreditCardView extends FrameView {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        statusMessageLabel.setText("");
        NumberFormat curr = NumberFormat.getCurrencyInstance();
+       cc = new Card();
+       if(cc.getErrorMsg().isEmpty()){
+        jtxtAcctNo.setText(cc.getAcctNo());
+    }else{
+           statusMessageLabel.setText(cc.getErrorMsg());
+       }
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
